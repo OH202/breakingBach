@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="580.0" maxWidth="810.0" minHeight="580.0" minWidth="810.0" prefHeight="580.0" prefWidth="810.0" style="-fx-padding:0px;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="bb.controller.RootLayoutController">
+  <stylesheets>
+    <URL value="@DarkTheme.css" />
+    <URL value="@DarkBluetheme.css" />
+  </stylesheets>
+  <top>
+    <MenuBar maxWidth="-Infinity" minHeight="-1.0" minWidth="-Infinity" prefWidth="810.0" style="-fx-padding:2px;&#10;-fx-background-color:#207CCA;&#10;">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About" />
+          </items>
+        </Menu>
+      </menus>
+      <BorderPane.margin>
+        <Insets left="5.0" top="5.0" />
+      </BorderPane.margin>
+    </MenuBar>
+  </top>
+</BorderPane>

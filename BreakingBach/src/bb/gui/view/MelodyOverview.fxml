@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="550.0" maxWidth="-Infinity" minHeight="-1.0" minWidth="-Infinity" prefHeight="-1.0" prefWidth="810.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="bb.controller.MelodyOverviewController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <BorderPane layoutX="0.0" layoutY="0.0" prefHeight="550.0" prefWidth="805.0" styleClass="background">
+      <center>
+        <Pane prefHeight="200.0" prefWidth="200.0" styleClass="background">
+          <children>
+            <Label layoutX="22.0" layoutY="16.0" style="-fx-font-size:24px;" styleClass="label-header" text="Musical Settings" />
+            <ChoiceBox fx:id="majorScales" layoutX="119.0" layoutY="156.0" minHeight="21.9609375" prefHeight="32.0" prefWidth="144.0" value="C_Major">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="C_Major" />
+                  <String fx:value="D_Major" />
+                  <String fx:value="E_Major" />
+                  <String fx:value="F_Major" />
+                  <String fx:value="G_Major" />
+                  <String fx:value="A_Major" />
+                  <String fx:value="B_Major" />
+                </FXCollections>
+              </items>
+            </ChoiceBox>
+            <ChoiceBox fx:id="minorScales" disable="true" layoutX="119.0" layoutY="225.0" minHeight="21.9609375" prefHeight="32.0" prefWidth="144.0" value="B_Minor">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="C_Minor" />
+                  <String fx:value="D_Minor" />
+                  <String fx:value="E_Minor" />
+                  <String fx:value="F_Minor" />
+                  <String fx:value="G_Minor" />
+                  <String fx:value="A_Minor" />
+                  <String fx:value="B_Minor" />
+                </FXCollections>
+              </items>
+            </ChoiceBox>
+            <Label layoutX="22.0" layoutY="165.0" styleClass="label-bright" text="Major Scales" />
+            <Label layoutX="22.0" layoutY="234.0" styleClass="label-bright" text="Minor Scales" />
+            <Label layoutX="22.0" layoutY="65.0" style="-fx-font-size:18px;" styleClass="label-header" text="Scales" />
+            <HBox id="HBox" alignment="CENTER" layoutX="22.0" layoutY="116.0" spacing="5.0">
+              <children>
+                <RadioButton fx:id="enableMajor" mnemonicParsing="false" onAction="#handleScale" styleClass="label-bright" text="Enable Major Scales">
+                  <toggleGroup>
+                    <ToggleGroup fx:id="scaleChoice" />
+                  </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="enableMinor" disable="false" mnemonicParsing="false" onAction="#handleScale" styleClass="label-bright" text="Enable Minor Scales" toggleGroup="$scaleChoice" />
+              </children>
+            </HBox>
+            <Label layoutX="22.0" layoutY="281.0" style="-fx-font-size:18px;" styleClass="label-header" text="Fitness Functions" />
+            <ChoiceBox fx:id="fitnessFunctions" layoutX="119.0" layoutY="330.0" prefHeight="31.999908447265625" prefWidth="144.00002207031503" value="Scale">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Pitch Dist." />
+                  <String fx:value="Intervals" />
+                  <String fx:value="Parallel Intervals" />
+                  <String fx:value="Notes:Rests" />
+                  <String fx:value="Repeating Notes" />
+                  <String fx:value="Scale" />
+                </FXCollections>
+              </items>
+            </ChoiceBox>
+            <Label layoutX="23.0" layoutY="339.0" styleClass="label-bright" text="Strategy Type" />
+          </children>
+          <stylesheets>
+            <URL value="@DarkBluetheme.css" />
+            <URL value="@DarkTheme.css" />
+          </stylesheets>
+        </Pane>
+      </center>
+      <left>
+        <Pane prefHeight="497.0" prefWidth="303.0">
+          <children>
+            <Pane layoutX="-1.0" layoutY="249.0" prefHeight="248.0" prefWidth="303.0">
+              <children>
+                <HBox layoutX="14.0" layoutY="198.0" prefHeight="36.0" prefWidth="281.9999000000025">
+                  <children>
+                    <Button fx:id="generate" defaultButton="false" disable="true" mnemonicParsing="false" onAction="#handleGenerateMelody" prefWidth="140.0" text="Generate">
+                      <stylesheets>
+                        <URL value="@DarkBluetheme.css" />
+                      </stylesheets>
+                    </Button>
+                  </children>
+                  <stylesheets>
+                    <URL value="@DarkBluetheme.css" />
+                  </stylesheets>
+                </HBox>
+              </children>
+              <stylesheets>
+                <URL value="@DarkBluetheme.css" />
+              </stylesheets>
+            </Pane>
+            <Pane layoutX="-1.0" layoutY="1.0" prefHeight="248.0" prefWidth="303.0" styleClass="background">
+              <children>
+                <Label layoutX="123.0" layoutY="164.0" styleClass="label-bright" text="Number Of Notes">
+                  <stylesheets>
+                    <URL value="@DarkBluetheme.css" />
+                  </stylesheets>
+                </Label>
+                <ChoiceBox fx:id="numberNotes" layoutX="29.0" layoutY="155.0" minHeight="21.9609375" prefHeight="31.921875" prefWidth="79.0" value="60">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="12" />
+                      <String fx:value="24" />
+                      <String fx:value="36" />
+                      <String fx:value="48" />
+                      <String fx:value="60" />
+                      <String fx:value="72" />
+                      <String fx:value="84" />
+                      <String fx:value="96" />
+                      <String fx:value="108" />
+                      <String fx:value="120" />
+                      <String fx:value="132" />
+                      <String fx:value="144" />
+                    </FXCollections>
+                  </items>
+                  <stylesheets>
+                    <URL value="@DarkBluetheme.css" />
+                  </stylesheets>
+                </ChoiceBox>
+                <ChoiceBox fx:id="numberEvolutions" layoutX="29.0" layoutY="97.0" prefWidth="79.0" style="-fx-background-radius: 0, 0, -1, -2;" value="300">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="50" />
+                      <String fx:value="100" />
+                      <String fx:value="150" />
+                      <String fx:value="200" />
+                      <String fx:value="250" />
+                      <String fx:value="300" />
+                      <String fx:value="350" />
+                      <String fx:value="400" />
+                      <String fx:value="450" />
+                      <String fx:value="500" />
+                      <String fx:value="550" />
+                      <String fx:value="600" />
+                    </FXCollections>
+                  </items>
+                  <stylesheets>
+                    <URL value="@DarkBluetheme.css" />
+                  </stylesheets>
+                </ChoiceBox>
+                <Label layoutX="123.0" layoutY="101.0" styleClass="label-bright" text="Number Of Evolutions" />
+                <Label layoutX="41.0" layoutY="14.0" style="-fx-font-size:24px;" styleClass="label-header" text="General Settings" />
+              </children>
+              <stylesheets>
+                <URL value="@DarkBluetheme.css" />
+                <URL value="@DarkTheme.css" />
+              </stylesheets>
+            </Pane>
+          </children>
+        </Pane>
+      </left>
+      <stylesheets>
+        <URL value="@DarkBluetheme.css" />
+        <URL value="@DarkTheme.css" />
+      </stylesheets>
+      <top>
+        <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="810.0" style="-fx-background-color:#373636;&#10;-fx-padding:5px;" styleClass="label-header" text="                                    Breaking Bach" textAlignment="CENTER">
+          <stylesheets>
+            <URL value="@DarkBluetheme.css" />
+          </stylesheets>
+        </Label>
+      </top>
+    </BorderPane>
+  </children>
+  <padding>
+    <Insets bottom="5.0" />
+  </padding>
+  <stylesheets>
+    <URL value="@DarkBluetheme.css" />
+    <URL value="@DarkBluetheme.css" />
+  </stylesheets>
+</AnchorPane>
