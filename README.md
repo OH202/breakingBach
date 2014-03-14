@@ -1,5 +1,6 @@
+
 breakingBach
-============
+========================================================================================================================
 
 Here's what I think it should include:
 
@@ -10,28 +11,14 @@ File hierarchy is split up into 6 sections in an attempt to organize development
 1. bb.controller - contains all controller classes
 2. bb.gui.view - contains all styling files for controllers (.fxml and .css)
 3. bb.lib - foundation for musicality of program; defines what a note, scale, key etc is.
-4. bb.producers - 
-5. bb.strategies -
-6. bb.util -
+4. bb.producers - base class for melody, were the controller classes to be taken apart and abstracted, this would be a good place to put it (version 2.0?)
+5. bb.strategies - Fitness functions for arranging best melodies
+6. bb.util - convenient tools used to create MIDI files, JGAP structures.
 
 
+MIDI files are stored in the directory in which you downloaded the repo.
 
-
-
-
-
-descriptions of all the project, and all sub-modules and libraries
-5-line code snippet on how its used (if it's a library)
-copyright and licensing information (or "Read LICENSE")
-instruction to grab the documentation
-instructions to install, configure, and to run the programs
-instruction to grab the latest code and detailed instructions to build it (or quick overview and "Read INSTALL")
-list of authors or "Read AUTHORS"
-instructions to submit bugs, feature requests, submit patches, join mailing list, get announcements, or join the user or dev community in other forms
-other contact info (email address, website, company name, address, etc)
-a brief history if it's a replacement or a fork of something else
-legal notices (crypto stuff)
-MIDI files are stored in the install folder.
+========================================================================================================================
 
 The MIT License (MIT)
 
