@@ -1,10 +1,5 @@
-
 breakingBach
 ========================================================================================================================
-
-Here's what I think it should include:
-
-name of the projects and all sub-modules and libraries (sometimes they are named different and very confusing to new users)
 
 File hierarchy is split up into 6 sections in an attempt to organize development according to MVC design principles:
 
