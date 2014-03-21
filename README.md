@@ -13,6 +13,8 @@ File hierarchy is split up into 6 sections in an attempt to organize development
 
 MIDI files are stored in the directory in which you downloaded the repo.
 
+Executable file is in /BreakingBach/build/deploy/bundles
+
 ========================================================================================================================
 
 The MIT License (MIT)
