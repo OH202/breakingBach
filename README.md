@@ -1,6 +1,12 @@
 breakingBach
 ========================================================================================================================
 
+Hi:
+
+This repo contains all the source code as well as an executable for a simple Java program that I built as a personal project during the Summer of 2014. 'BreakingBach' uses evolutionary algorithms to produce unique melodies which are then downloaded onto your computer in the form of MIDI files. It's not the first of its kind, but let me know what you think!
+
+========================================================================================================================
+
 File hierarchy is split up into 6 sections in an attempt to organize development according to MVC design principles:
 
 1. bb.controller - contains all controller classes
